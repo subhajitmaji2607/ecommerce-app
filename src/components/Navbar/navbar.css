@@ -1,0 +1,6 @@
+.MuiOutlinedInput-root {
+    position: relative;
+    border-radius: 17px !important;
+    height: 38px;
+    margin-top: 10px;
+}
