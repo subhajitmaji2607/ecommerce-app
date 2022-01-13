@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import { Grid, TextField, Card,CardContent} from '@material-ui/core';
 import {InputAdornment} from '@material-ui/core';
 import { IconButton,Icon,Badge } from '@material-ui/core';
-
+import { Dialog,DialogActions,DialogContent,DialogContentText,DialogTitle } from '@material-ui/core';
 
 import { useState } from 'react';
 
@@ -55,7 +55,11 @@ const useStyles = makeStyles(() =>({
 const Navbar = () => {
     const classes = useStyles();
     const [searchTerm,setSearchTerm ] = useState('')
-    console.log(searchTerm);
+
+    const onClickOpen = ()=>{
+      console.log('user profile');
+    }
+
     return (
         <div className={classes.layoutRoot}>
             <AppBar position="static" style={{backgroundColor:'#fefefe'}}>
@@ -76,7 +80,9 @@ const Navbar = () => {
                     />                  
                     <div className={classes.circleContainer}>
                       <div className={classes.circle}>
+                        <IconButton onClick={onClickOpen}>
                         <Icon className={classes.icon}>person_outline</Icon>
+                        </IconButton>
                       </div>
                       <div className={classes.circle}>
                         <Badge badgeContent={4} color="secondary">
